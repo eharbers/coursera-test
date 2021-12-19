@@ -160,8 +160,38 @@ body {
 	color: #fff;
 	opacity: .8;
 }
-
 /* END HOME PAGE */
+
+/* MENU CATEGOERIES PAGE */
+.category-tile {
+	position: relative;
+	border: 2px solid #3f0c1f;
+	overflow: hidden;
+	width: 200px;
+	height: 200px;
+	margin: 0 auto 15px;
+}
+.category-tile span {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	width: 100%;
+	text-align: center;
+	font-size: 1.2em;
+	text-transform: uppercase;
+	background-color: #000;
+	color: #fff;
+	opacity: .8;
+}
+.category-tile:hover {
+	box-shadow: 0 1px 5px 1px #cccccc;
+}
+#menu-categories-title + div {
+	margin-bottom: 50px;
+}
+/* END MENU CATEGORIES PAGE */
+
+/********** section with special css for the different devices width **********/
 
 /********** Large devices only **********/
 @media (min-width: 1200px) {
@@ -169,7 +199,7 @@ body {
     background: url('../images/jumbotron_1200.jpg') no-repeat;
     height: 675px;
   }
-}
+} /* end large devices width > 1200
 
 /********** Medium devices only **********/
 @media (min-width: 992px) and (max-width: 1199px) {
@@ -188,7 +218,7 @@ body {
     height: 558px;
   }
   /* End Home Page */
-}
+} /* end medium devices 992 < width < 1199
 
 /********** Small devices only **********/
 @media (min-width: 768px) and (max-width: 991px) {
@@ -199,7 +229,7 @@ body {
   }
   /* End Home Page */
 
-}
+} /* end small devices 768 < width < 991 /* 
 
 /********** Extra small devices only **********/
 @media (max-width: 767px) {
@@ -270,22 +300,29 @@ body {
   	width: 360px;
   	margin: 0 auto 15px;
   }
+} /* end extra small devices width < 767
 
+/********** Super extra small devices only **********/
+@media (max-width: 479px) {
+	/* header */
+	.navbar-brand h1 { /* restaurant name */
+		padding-top: 5px;
+		font-size: 6vw;
+	}
 
-  /********** Super extra small devices only **********/
-  @media (max-width: 479px) {
-  	/* header */
-  	.navbar-brand h1 { /* restaurant name */
-  		padding-top: 5px;
-  		font-size: 6vw;
-  	}
+	/* home page */
+	#menu-tile, #specials-tile {
+		width: 280px;
+		margin: 0 auto 15px;
+	}
 
-  	/* home page */
-  	#menu-tile, #specials-tile {
-  		width: 280px;
-  		margin: 0 auto 15px;
-  	}
-  	/* end home page */
-  }
-
-}
+	.col-xxs-12 { /* actualy copy of col-sm-12, but we are using a different media width of < 479px here */
+		position: relative;
+		min-height: 1px;
+		padding-right: 15px;
+		padding-left: 15px;
+		float: left;
+		width: 100%;
+	}
+	/* end home page */
+} /* end super extra small devices width < 479 */
